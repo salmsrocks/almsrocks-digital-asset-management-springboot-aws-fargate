@@ -1,0 +1,84 @@
+<div [@routerTransition] style="place-content:inherit;width:75%;margin-left: auto; margin-right: auto; display: block;background-color: rgb(219, 233, 231)">
+     <app-page-header [heading]="'  &nbsp; Create Contract'" [icon]="'fa fa-eye'"></app-page-header>
+        
+        
+    <div class="row">
+            <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form role="form" noValidate>
+                    <!-- <fieldset class="form-group">
+                        <label>DealId</label>                 
+                             <input class="form-control"  name="DealId" [(ngModel)]="contractDetails.id" />
+                      </fieldset> -->
+                    <fieldset class="form-group">
+                       <label>DealName</label>             
+                        <input class="form-control" name="DealName" [(ngModel)]="contractDetails.dealName" required />
+                 </fieldset>
+                 <fieldset class="form-group">
+                    <label>VendorName</label>             
+                     <!-- <input class="form-control" name="VendorName" [(ngModel)]="contractDetails.vendor" required/> -->
+                     <select name="VendorName" [(ngModel)]="contractDetails.vendor" (ngModelChange)="VendorSelected($event)" class="form-control ng-untouched ng-pristine ng-invalid" aria-placeholder="select">
+                         <option *ngFor="let p of Vendors" [ngValue]="p.username" selected="selected">{{p.username}}</option>
+                         
+                          </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>AgencyName</label>             
+                 <!-- <input class="form-control" name="AgencyName" [(ngModel)]="contractDetails.agency" required/> -->
+                 <select name="AgencyName" [(ngModel)]="contractDetails.agency" (ngModelChange)="AgencySelected($event)" class="form-control ng-untouched ng-pristine ng-invalid" aria-placeholder="select">
+                               <option *ngFor="let p of Agency" [ngValue]="p.username" selected="selected">{{p.username}}</option>  
+                      </select>
+          </fieldset>
+                 <fieldset class="form-group">
+                    <label>Deal Status</label>
+                        <select class="form-control" name="DealStatus" [(ngModel)]="contractDetails.dealStatus" disabled required>
+                            <option selected>Created</option>
+                            <option>Approved</option>
+                            <option>Assigned</option>
+                         </select>
+                 </fieldset>
+                 <fieldset class="form-group">
+                        <label>Deal Type</label>
+                            <select class="form-control" name="DealType" [(ngModel)]="contractDetails.dealType" required>
+                                <option>Music</option>
+                                <option>Film</option>
+                                <option>Sports</option>
+                             </select>
+                </fieldset>
+                
+                <!-- <fieldset class="form-group">
+                        <label>DealStage</label><input class="form-control" name="DealStage" [(ngModel)]="contractDetails.DealStage">
+                </fieldset> -->
+                <fieldset class="form-group">
+                        <label>Deal From Date</label>
+                                <input type="date" name="FromDate"   class="form-control" [(ngModel)]="contractDetails.dealFromDate" placeholder='Select a date' required>
+                                <!-- <ejs-datepicker  name="Date" class="form-control" [(ngModel)]="contractDetails.Date"  placeholder='Select a date'  ></ejs-datepicker> -->
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>Deal To Date</label>
+                            <input type="date" name="ToDate" class="form-control" [(ngModel)]="contractDetails.dealToDate" placeholder='Select a date' required>
+                            <!-- <ejs-datepicker  name="Date" class="form-control" [(ngModel)]="contractDetails.Date"  placeholder='Select a date'  ></ejs-datepicker> -->
+            </fieldset>
+            <fieldset class="form-group">
+                <label>Deal Creation Date</label>
+                        <input type="date" name="CreatedDate" class="form-control" [(ngModel)]="contractDetails.createdDate" placeholder='Select a date' readonly required>
+                        <!-- <ejs-datepicker  name="Date" class="form-control" [(ngModel)]="contractDetails.Date"  placeholder='Select a date'  ></ejs-datepicker> -->
+        </fieldset>
+        <fieldset class="form-group">
+                        <label>Deal Currency</label>
+                            <select class="form-control" name="DealCurrency" [(ngModel)]="contractDetails.dealCurrency">
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>CAD</option>
+                                <option>INR</option>
+                                <option>UKP</option>
+                                <option>JPY</option>
+                             </select>
+                </fieldset> 
+                <div class="form-group">
+                    <button  class="btn btn-secondary" (click)="addContract()">Create Contract</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

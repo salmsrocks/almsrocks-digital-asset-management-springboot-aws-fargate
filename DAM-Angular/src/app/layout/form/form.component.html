@@ -1,0 +1,61 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Dashboard'" [icon]="'fa-bar-chart-o'"></app-page-header>
+    <div class="row">
+        <!-- <div class="col col-sm-6">
+            <div class="card mb-3">
+                <a routerLink="/programdashboard" style="text-decoration:none"> View Programs</a> 
+            </div> -->
+            <div *ngIf="role=='mediacompany'" class="col col-sm-3">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Asset</div>
+                <div class="card-body" style="height: 10.7rem;">Programs Created <span class="badge badge-pill badge-light" style="height: 1.3em;">{{Programs.length}}</span>  <br>    <br><br><br>
+                    <h4 class="card-title" class="text-white" > View Programs &nbsp;<a routerLink="/programdashboard" class="fa fa-arrow-circle-right" style='font-size:24px;color:slategray;text-decoration:none'></a></h4>
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                </div>
+        </div>
+    </div>
+    <div class="col col-sm-3">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">Contracts</div>
+            <div class="card-body">
+                    <!-- <button type="button" class="btn btn-dark"> -->
+                            Approved <span class="badge badge-pill badge-light" style="height: 1.3em;">{{Contractcreatedcount}}</span>  <br>                         
+                          <!-- </button> -->
+                          <!-- <button type="button" class="btn btn-dark"> -->
+                                Payment completed <span class="badge badge-pill badge-light" style="height: 1.3em;">{{Contractpaymentcompleted}}</span>  <br>                             
+                              <!-- </button> -->
+                              <!-- <button type="button" class="btn btn-dark"> -->
+                                    Executed <span class="badge badge-pill badge-light" style="height: 1.3em;">{{Contractexecuted}}</span>   <br> <br>                                 
+                                  <!-- </button> -->
+                  <h4 class="card-title" class="text-white" > View Contracts &nbsp;<a routerLink="/dashboard" class="fa fa-arrow-circle-right" style='font-size:24px;color:green;text-decoration:none'></a></h4>
+            </div>
+            
+    </div>
+    
+</div>
+    </div>
+    <!-- <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                View Contracts
+            </div>
+        </div> -->
+        <!-- <div class="col col-sm-6">
+            <div class="card mb-3">
+               
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+               
+            </div>
+        </div> -->
+    <!-- </div>
+</div> -->

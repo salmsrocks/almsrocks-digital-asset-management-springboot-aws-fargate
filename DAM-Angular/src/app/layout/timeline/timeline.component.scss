@@ -1,0 +1,72 @@
+
+  element.style {
+
+    border-color: rgb(249, 186, 65);
+
+}
+
+.timeline-entry {
+
+  border-left: 5px solid transparent;
+
+  position: relative;
+
+  padding: 20px;
+
+  margin: 20px;
+
+}
+
+.separator {
+
+  height: 100%;
+
+  width: 0;
+
+  position: absolute;
+
+  left: 190px;
+
+  border-right: 2px dotted #bbbbbb;
+
+}
+
+.date {
+
+  color: #808080;
+
+  position: absolute;
+
+  left: 0;
+
+  margin-top: 10px;
+
+  width: 180px;
+
+  text-align: right;
+
+}
+
+.timeline {
+
+  position: relative;
+
+  padding-left: 200px;
+
+}
+
+.timeline-entry:before {
+
+  content: '';
+
+  position: absolute;
+
+  width: 25px;
+
+  border-top: 2px dotted #bbbbbb;
+
+  left: -31px;
+
+}
+ 
+  

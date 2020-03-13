@@ -1,0 +1,35 @@
+<div [@routerTransition]>
+   
+    <div [@routerTransition] style="place-content:inherit;width:75%;margin-left: auto; margin-right: auto; display: block;background-color: rgb(219, 233, 231)">
+        <app-page-header [heading]="'   &nbsp; Create Program'" [icon]="'fa fa-eye'"></app-page-header>
+        
+        
+    <div class="row">
+            <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form role="form" noValidate>
+                    <fieldset class="form-group">
+                       <label>ProgramName</label>             
+                        <input class="form-control" name="ProgramName" [(ngModel)]="programDetails.programName" />
+                 </fieldset>
+                 <fieldset class="form-group">
+                    <label>Genre</label>             
+                     <input class="form-control" name="Genre" [(ngModel)]="programDetails.genre" />
+              </fieldset>
+              <fieldset class="form-group">              
+                <div>
+                    <label for="filePicker">Choose a file:</label><br>
+                    <input type="file"  name="filePicker" [(ngModel)]="programDetails.programVideo" id="filePicker" accept='image/*' (change)="onSelectFile($event)">
+                </div>                         
+        </fieldset>
+              <fieldset class="form-group">
+                <label>Owner</label>             
+                 <input class="form-control" name="Owner" [(ngModel)]="programDetails.owner"  readonly/>
+              </fieldset>
+                <div class="form-group">
+                    <button  class="btn btn-secondary" (click)="addProgram()">Create Program</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

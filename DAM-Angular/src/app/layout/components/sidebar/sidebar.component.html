@@ -1,0 +1,169 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+            <div class="nested-menu"  *ngIf="showActions" [ngClass]="{collapsed: collapsed}"  >
+                    <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                            <i class= "{{collapsed?'fa fa-film':'fa fa-plus'}}" ></i>&nbsp;
+                        <span>{{ 'Asset Management' | translate }}</span>
+                    </a>
+                    <li class="nested" [class.expand]="showMenu === 'pages1'">
+                        <ul class="submenu">
+                            <li> <a routerLink="/program" [routerLinkActive]="['router-link-active']" style="text-decoration:none" ><i class="fa fa-pencil-square-o"></i>&nbsp;Create Program</a></li>
+                            <li ><a routerLink="/programdashboard" [routerLinkActive]="['router-link-active']" style="text-decoration:none"> <i class="fa fa-eye"></i>&nbsp;View/Edit Program</a></li>
+                          
+                        </ul>
+                    </li>
+                </div>
+              
+        <div class="nested-menu" [ngClass]="{collapsed: collapsed}"  >
+            <a class="list-group-item" (click)="addExpandClass3(this.role)">
+                    <i class= "{{collapsed?'fa fa-file':'fa fa-plus'}}" ></i>&nbsp;
+                <span>{{ 'Rights Out' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'mediacompany'">
+                <ul class="submenu">
+                       <li> <a routerLink="/contract" [routerLinkActive]="['router-link-active']" style="text-decoration:none" > <i class=" fa fa-pencil-square-o"></i>&nbsp;Create Contract</a></li>
+                       <li ><a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" style="text-decoration:none"> <i class="fa fa-clipboard"></i>&nbsp;View/Edit Contract</a></li>
+                    <li ><a routerLink="/rightsin" [routerLinkActive]="['router-link-active']" style="text-decoration:none"> <i class="fa fa-check-circle"></i>&nbsp;Assign Rights</a></li>
+                   
+                    <!-- ? <li routerLinkActive="active"><a routerLink="/"  style="text-decoration:none" > <i class="fa fa-hand-o-up"></i>&nbsp;Assign RightsOut</a></li> -->
+                </ul>
+            </li>
+
+<!-------------------------------------------------------------------------------------------------->
+            <li class="nested" [class.expand]="showMenu === 'vendor'">
+                    <ul class="submenu">
+                           
+                           <li ><a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" style="text-decoration:none"> <i class="fa fa-clipboard"></i>&nbsp;View/Edit Contract</a></li>
+                        <li ><a routerLink="/payment"  style="text-decoration:none"> <i class="fa fa-money"></i>&nbsp;Make Payment</a></li>
+                        
+                        <!-- ? <li routerLinkActive="active"><a routerLink="/"  style="text-decoration:none" > <i class="fa fa-hand-o-up"></i>&nbsp;Assign RightsOut</a></li> -->
+                    </ul>
+                </li>
+
+<!-------------------------------------------------------------------------------------------------->
+                <li class="nested" [class.expand]="showMenu === 'agency'">
+                        <ul class="submenu">
+                               <li> <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" style="text-decoration:none" ><i class="fa fa-clipboard"></i>&nbsp;View Contract</a></li>                               
+                            <!-- <li ><a routerLink="/rightsin" [routerLinkActive]="['router-link-active']" style="text-decoration:none"> <i class="fa fa-hand-o-down"></i>&nbsp;Assign Rights</a></li> -->
+                           <!-- ? <li routerLinkActive="active"><a routerLink="/"  style="text-decoration:none" > <i class="fa fa-hand-o-up"></i>&nbsp;Assign RightsOut</a></li> -->
+                        </ul>
+                    </li>
+        </div>
+        <!-- <a [routerLink]="['/not-found']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;
+            <span>{{ 'Residual' | translate }}</span>
+        </a> -->
+        <!-- <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-wrench"></i>&nbsp;
+            <span>{{ 'Bootstrap Grid' | translate }}</span>
+        </a>
+         -->
+        <!-- <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'Component' | translate }}</span>
+        </a> -->
+        
+        <!-- <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i>&nbsp;
+            <span>{{ 'Blank Page' | translate }}</span>
+        </a> -->
+        <!-- <a href="http://www.strapui.com/" class="list-group-item">
+            <i class="fa fa-caret-down"></i>&nbsp;
+            <span>{{ 'More Themes' | translate }}</span>
+        </a> -->
+        <div class="nested-menu" *ngIf="showActions" [ngClass]="{collapsed: collapsed}"  >
+            <a class="list-group-item" (click)="addExpandClass4(this.role)">
+                    <i class= "{{collapsed?' fa fa-cogs':'fa fa-plus'}}" ></i>&nbsp;
+                <span>{{ 'Administrator' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu1 === 'mediacompany'">
+                <ul class="submenu">
+                       <li> <a routerLink="/admin" [routerLinkActive]="['router-link-active']" style="text-decoration:none" ><i class="fa fa-user-plus"></i>&nbsp;Add Participants</a></li>
+                      
+                    <!-- ? <li routerLinkActive="active"><a routerLink="/"  style="text-decoration:none" > <i class="fa fa-hand-o-up"></i>&nbsp;Assign RightsOut</a></li> -->
+                </ul>
+            </li></div>
+        <div class="header-fields">
+            <!-- <a (click)="rltAndLtr()" class="list-group-item">
+                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+            </a>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('languages')">
+                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'languages'">
+                    <ul class="submenu">
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('en')">
+                                {{ 'English' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('fr')">
+                                {{ 'French' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('ur')">
+                                {{ 'Urdu' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('es')">
+                                {{ 'Spanish' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('it')">
+                                {{ 'Italian' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('fa')">
+                                {{ 'Farsi' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('de')">
+                                {{ 'German' | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div> -->
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('profile')">
+                    <span><i class="fa fa-user"></i>&nbsp; </span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'profile'">
+                    <ul class="submenu">
+                        <!-- <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a [routerLink]="['/login']" (click)="onLoggedout()">
+                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' | translate }}</span>
+    </div>
+</nav>

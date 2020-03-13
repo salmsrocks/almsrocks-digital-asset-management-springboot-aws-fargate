@@ -1,0 +1,42 @@
+
+ <div [@routerTransition]> 
+    <app-page-header [heading]="'Program List'" [icon]="'fa fa-list'"></app-page-header>
+   
+
+    
+ <!-- contract list table, it hides when there is no contract -->
+ <div *ngIf="Programs.length !== 0">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">Program Name</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Program File</th>
+            <th scope="col">Action</th>
+             </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let program of Programs">
+            <!-- <td>{{Contract.id}}</td> -->
+            <td>{{program.programName}}</td>
+            <td>{{program.genre}}</td>
+            <td>{{program.owner}}</td>  
+            <td><img [src]="program.programVideo" width="50" height="50" *ngIf="program.programVideo"/></td>  
+            <td >
+              <!-- <span class="approve" (click)="updateContract(Contract.dealId,'Approved')">Approve</span>&nbsp; -->
+              <span class="delete" (click)="deleteProgram(program.programId)">Delete</span> 
+            </td>          
+            <!-- <td>
+              <span class="approve" (click)="updateContract(Contract.dealId,'Approved')">Approve</span>&nbsp;
+              <span class="delete" (click)="updateContract(Contract.dealId,'Denied')">Reject</span> 
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+</div>
+</div>

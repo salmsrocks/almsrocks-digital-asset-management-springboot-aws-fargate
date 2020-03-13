@@ -1,0 +1,91 @@
+<div [@routerTransition] style="place-content:inherit;width:75%;margin-left: auto; margin-right: auto; display: block;background-color: rgb(219, 233, 231)">
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+        <app-page-header [heading]="'  &nbsp;  Assign Rights123 '" [icon]="'fa-edit'" ></app-page-header>
+        <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6" >
+        
+    <form role="form">
+
+        <fieldset class="form-group">
+            <label>Deal Name</label>
+            <select name="Deal" [(ngModel)]="updateStatus.deal" (ngModelChange)="DealSelected($event)" class="form-control ng-untouched ng-pristine ng-invalid" aria-placeholder="select">
+                <option *ngFor="let c of Contracts" [ngValue]="c.dealId">{{c.dealName}}</option>
+              </select>
+        </fieldset>
+
+        <!--  <fieldset class="form-group">
+            <label>Programs</label>
+            <ejs-multiselect id='ContractsList' name="Contracts" [(ngModel)]="updateStatus.deal"  #local [dataSource]='Contracts' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>    
+        </fieldset> -->
+
+        <fieldset class="form-group">
+            <label>Programs</label>
+            <ejs-multiselect id='ProgramsList' name="Programs" [(ngModel)]="updateStatus.programList"  #local [dataSource]='Programs' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>    
+        </fieldset>
+
+        <!-- <fieldset class="form-group">
+            <label>Term From Date </label>
+            <div class="control-section">
+                    <div id="control_wrapper" > -->
+                        <!-- <ejs-datepicker></ejs-datepicker> -->
+                        <!-- <ejs-datepicker id='datepicker' placeholder='Select a date' [value]='date'  ></ejs-datepicker>
+                    </div>
+                </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+                <label>Term To Date </label>
+                <div class="control-section">
+                        <div id="control_wrapper" > -->
+                            <!-- <ejs-datepicker></ejs-datepicker> -->
+                            <!-- <ejs-datepicker id='datepicker' placeholder='Select a date' [value]='date'  ></ejs-datepicker>
+                        </div>
+                    </div>                
+            </fieldset> -->
+
+        <!-- <fieldset class="form-group">
+            <label>Programs</label>
+            <angular4-multiselect [data]="Programs" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+                <c-item>
+                        <ng-template let-item="item">
+                          <label style="color: #333;min-width: 150px;">{{item.programName}}</label>
+                           <img [src]="item.image" style="width: 30px; border: 1px solid #efefef;margin-right: 20px;" />
+                          <label>Capital - {{item.capital}}</label> -->
+                        <!-- </ng-template>
+                </c-item>    
+              </angular4-multiselect>
+        </fieldset> --> 
+
+        <!-- <fieldset class="form-group">
+            <label for="exampleInputFile">Select Asset</label>
+            <input type="file" class="form-control-file" id="exampleInputFile">
+        </fieldset>      -->
+
+        <!-- <div class="form-group">
+            <label>Languages:</label>&nbsp; &nbsp;
+            <label class="checkbox-inline">
+                <input type="checkbox">English
+            </label> &nbsp;
+            <label class="checkbox-inline">
+                <input type="checkbox">Spanish
+            </label> &nbsp; -->
+            <!-- <label class="checkbox-inline">
+                <input type="checkbox">Malayalam
+            </label> &nbsp;
+            <label class="checkbox-inline">
+                <input type="checkbox">Telugu
+            </label> &nbsp;
+            <label class="checkbox-inline">
+                <input type="checkbox">Hindi
+            </label> -->
+        <!-- </div> -->
+
+
+        <button type="submit" class="btn btn-secondary" (click)="AssignRights('Contract Executed')">Assign Rights</button>&nbsp;
+        <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+       
+    </form>
+</div>
+</div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "contracts": [
+    {
+      "id": "jN21BHC",
+      "DealName": "Univision-Netflix",
+      "DealStatus": "Created",
+      "DealType": "Music",
+      "FromDate": "2019-06-04",
+      "ToDate": "2019-07-11",
+      "CreationDate": "2019-06-01",
+      "VendorName": "Netflix",
+      "AgencyName": "Deal Maker"
+    },
+    {
+      "DealName": "Univision-Prime",
+      "DealStatus": "Assigned",
+      "DealType": "Film",
+      "FromDate": "2019-06-14",
+      "ToDate": "2019-07-12",
+      "CreationDate": "2019-06-03",
+      "VendorName": "Prime",
+      "AgencyName": "Agency",
+      "id": "xK1H3zy"
+    },
+    {
+      "DealName": "Univision-Youtube",
+      "DealStatus": "Created",
+      "DealType": "Sports",
+      "FromDate": "2019-06-01",
+      "ToDate": "2019-07-06",
+      "CreationDate": "2019-06-01",
+      "VendorName": "Youtube",
+      "AgencyName": "Deal Maker",
+      "id": "Tb_z7WX"
+    }
+  ]
+}

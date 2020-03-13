@@ -1,0 +1,58 @@
+
+ <div [@routerTransition]> 
+    <app-page-header [heading]="'Contract List'" [icon]="'fa fa-list'"></app-page-header>
+   
+
+    <!-- <div class="row">
+      <div class="col-xl-12 text-xs-center">
+          <div class="card mb-3">
+              <div class="card-body">
+                  
+              </div>
+          </div>
+      </div>
+  </div> -->
+ <!-- contract list table, it hides when there is no contract -->
+ <div *ngIf="Contracts.length !== 0">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">DealName</th>
+            <th scope="col">VendorName</th>
+            <th scope="col">AgencyName</th>
+            <th scope="col">DealStatus</th>
+            <th scope="col">DealType</th>
+            <th scope="col">Deal From Date</th>
+            <th scope="col">Deal To Date</th>
+            <th scope="col">Deal Creation Date</th>
+            <th *ngIf="role=='mediacompany' || role=='vendor'" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Contract of Contracts">
+            <!-- <td>{{Contract.id}}</td> -->
+            <td *ngIf="role=='mediacompany'"><span class="delete" (click)="RedirectToTimeline(Contract.dealId)">{{Contract.dealName}}</span></td>
+            <td *ngIf="role!='mediacompany'">{{Contract.dealName}}</td>
+            <td>{{Contract.vendor}}</td>
+            <td>{{Contract.agency}}</td>
+            <td>{{Contract.dealStatus}}</td>
+            <td>{{Contract.dealType}}</td>
+            <td>{{Contract.dealFromDate}}</td>
+            <td>{{Contract.dealToDate}}</td>
+            <td>{{Contract.createdDate}}</td>
+            <td *ngIf="role=='mediacompany'">               
+                <span class="delete" (click)="deleteContract(Contract.dealId)">Delete</span> 
+              </td>
+            <td *ngIf="role=='vendor'">
+              <span class="approve" (click)="updateContract(Contract.dealId,'Approved')">Approve</span>&nbsp;
+              <span class="delete" (click)="updateContract(Contract.dealId,'Denied')">Reject</span> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+</div>
+</div>
