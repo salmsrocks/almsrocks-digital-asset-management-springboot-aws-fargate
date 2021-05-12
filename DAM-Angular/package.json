@@ -27,7 +27,7 @@
     "@ngx-translate/http-loader": "4.0.0",
     "@syncfusion/ej2-angular-calendars": "^17.1.48",
     "@syncfusion/ej2-angular-dropdowns": "^17.1.49",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "core-js": "2.5.7",
     "font-awesome": "4.7.0",
     "ng-pick-datetime": "^7.0.0",
